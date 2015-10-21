@@ -33,6 +33,7 @@ if(typeof _tests === "undefined"){
         *   Number
         */
         number: function (value, $el, attr) {
+            if(!value) return false;
             return /^\d+$/g.test(value);
         },
 
@@ -40,6 +41,7 @@ if(typeof _tests === "undefined"){
         *   Date
         */
         date: function (value, $el, attr) {
+            if(!value) return false;
             return ((new Date(date) !== "Invalid Date" && !isNaN(new Date(date))));
         },
 
@@ -47,7 +49,10 @@ if(typeof _tests === "undefined"){
         *   Phone
         */
         phone: function (value, $el, attr) {
-            var len = value.match(/\d/g).length;
+            if(!value) return false;
+            var m = value.match(/\d/g);
+            if(!m) return false;
+            var len = m.length;
             return len === 7 || len === 10 || len === 11;
         },
 

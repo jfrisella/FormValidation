@@ -16,7 +16,7 @@ if (typeof _utils === "undefined") {
         /**
         *   Development Mode
         */
-        mode: "debug",
+        mode: "no",
 
         /**
         *   Log

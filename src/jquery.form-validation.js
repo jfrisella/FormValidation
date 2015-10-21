@@ -48,6 +48,10 @@
                 //_utils.log(_default);
                 //_utils.log(_tests);
 
+                //Clear previous errors
+                _private.formObject = {};
+                _private.formErrors.length = 0;
+
                 //Grabs all the form items
                 //and loops through each for validation
                 var $e;
